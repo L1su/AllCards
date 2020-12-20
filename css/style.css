@@ -1,0 +1,60 @@
+.FirstRun {
+  background: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.FirstRun__close {
+  text-align: end;
+}
+
+.FirstRun__boards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.FirstRun__boards::-webkit-scrollbar {
+  display: none;
+}
+
+.FirstRun__nav {
+  text-align: center;
+}
+
+.FRboard {
+  height: 90vh;
+  min-width: 100vw;
+  scroll-snap-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body a {
+  text-decoration: none;
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

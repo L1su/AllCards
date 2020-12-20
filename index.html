@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>AllCards</title>
+</head>
+<body>
+    <dialog id="dialog" class="FirstRun">
+        <div class="FirstRun__close"> <button   onclick="window.dialog.close();">X</button ></div>
+        <div class="FirstRun__boards">
+            <div id="Board1" class="FRboard">
+                <h2>Korzystaj z promocji bez kolejnych kart lojalnościowych</h2>
+            </div>
+            <div id="Board2" class="FRboard">
+                <h2>Dodaj posiadane karty lojolnościowe</h2>
+            </div>
+            <div id="Board3" class="FRboard">
+                <h2>Pomagaj!</h2>
+            </div>
+            <div id="Board4" class="FRboard">
+                <h2>Regulamin</h2>
+            </div>
+        </div>
+        <div class="FirstRun__nav">
+            <a href="#Board1"> • </a>
+            <a href="#Board2"> • </a>
+            <a href="#Board3"> • </a>
+            <a href="#Board4"> • </a> 
+        </div>
+    </dialog>
+    
+    <button onclick="window.dialog.show();">open dialog</button>
+</body>
+</html>
