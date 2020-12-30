@@ -7,17 +7,18 @@
   margin: 0;
   padding: 0;
   border: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: absolute;
+  display: none;
 }
 
-.FirstRun__close {
-  text-align: end;
+.FirstRun--open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .FirstRun__boards {
@@ -33,10 +34,6 @@
 
 .FirstRun__boards::-webkit-scrollbar {
   display: none;
-}
-
-.FirstRun__nav {
-  text-align: center;
 }
 
 .FRboard {
