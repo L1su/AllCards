@@ -42,6 +42,10 @@
   scroll-snap-align: center;
 }
 
+.mega {
+  color: red;
+}
+
 body {
   margin: 0;
   padding: 0;
