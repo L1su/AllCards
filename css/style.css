@@ -1,18 +1,18 @@
 .FirstRun {
-  background: #ffffff;
-  height: 100vh;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
+  height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #2a9d8f;
 }
 
 .FirstRun--open {
@@ -21,29 +21,66 @@
   display: flex;
 }
 
-.FirstRun__boards {
+.FirstRun__slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: scroll;
+  overflow-x: auto;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
-  overflow-x: scroll;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
-.FirstRun__boards::-webkit-scrollbar {
-  display: none;
+.FirstRun__slider::-webkit-scrollbar {
+  width: 10px;
+  height: 19px;
 }
 
-.FRboard {
-  height: 90vh;
+.FirstRun__slider::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 3px;
+}
+
+.FirstRun__slider::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.FirstRun__slide {
   min-width: 100vw;
   scroll-snap-align: center;
 }
 
-.mega {
-  color: red;
+.FirstRun__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  z-index: 999;
+}
+
+.FirstRun__element {
+  position: relative;
+  width: 100%;
+  height: 19px;
+  overflow: hidden;
+}
+
+.FirstRun__element:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  -webkit-box-shadow: 0px 0px 0px 2000px #2a9d8f;
+          box-shadow: 0px 0px 0px 2000px #2a9d8f;
 }
 
 body {
