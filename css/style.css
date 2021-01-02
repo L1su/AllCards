@@ -54,7 +54,7 @@ body a {
 
 .FirstRun__slider::-webkit-scrollbar-thumb {
   background: #fff;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 .FirstRun__slider::-webkit-scrollbar-track {
@@ -81,6 +81,7 @@ body a {
   width: 100%;
   height: 19px;
   overflow: hidden;
+  font-size: 0;
 }
 
 .FirstRun__element:after {
