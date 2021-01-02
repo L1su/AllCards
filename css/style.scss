@@ -1,6 +1,14 @@
 @import 'DayColorSchem';
 
+@font-face {
+    font-family: "Bree Serif";
+    src: url(font/BreeSerif-Regular.ttf);
+}
+
+
 body {
+    font-family: "Bree Serif", serif;
+    letter-spacing: 0.5px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
