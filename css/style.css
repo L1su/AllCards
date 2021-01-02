@@ -26,7 +26,8 @@ body a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #2a9d8f;
+  background-color: #00AFB9;
+  color: #fff;
 }
 
 .FirstRun--open {
@@ -58,7 +59,7 @@ body a {
 }
 
 .FirstRun__slider::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .FirstRun__slide {
@@ -94,7 +95,7 @@ body a {
   border-radius: 100%;
   width: 15px;
   height: 15px;
-  -webkit-box-shadow: 0px 0px 0px 2000px #2a9d8f;
-          box-shadow: 0px 0px 0px 2000px #2a9d8f;
+  -webkit-box-shadow: 0px 0px 0px 2000px #00AFB9;
+          box-shadow: 0px 0px 0px 2000px #00AFB9;
 }
 /*# sourceMappingURL=style.css.map */
