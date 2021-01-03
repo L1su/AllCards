@@ -128,15 +128,45 @@ body a {
 }
 
 .slide__img {
-  margin: 0 auto;
+  height: 100%;
   width: 100%;
-  height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  max-height: 40vh;
+}
+
+.slide__img--1 {
+  background: url("../img/firstRun/promocje.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide__img--2 {
+  background: url("../img/firstRun/wlasna.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide__img--3 {
+  background: url("../img/firstRun/pomagaj.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide__img--4 {
+  background: url("../img/firstRun/regulamin.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .slide__title {
   text-align: center;
   padding: 5vh 0 1vh 0;
+}
+
+.slide__desc {
+  text-align: justify;
 }
 /*# sourceMappingURL=style.css.map */
