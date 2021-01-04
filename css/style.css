@@ -1,17 +1,18 @@
 @font-face {
-  font-family: "Bree Serif";
-  src: url(font/BreeSerif-Regular.ttf);
+  font-family: "Arbutus Slab";
+  src: url(font/ArbutusSlab-Regular.ttf);
+  font-weight: 0;
 }
 
 body {
-  font-family: "Bree Serif", serif;
-  letter-spacing: 0.5px;
+  font-family: 'Arbutus Slab', sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
   height: 100%;
+  background: #FDFCDC;
 }
 
 body a {
@@ -131,6 +132,7 @@ body a {
   height: 100%;
   width: 100%;
   max-height: 40vh;
+  min-height: 40vh;
 }
 
 .slide__img--1 {
@@ -163,10 +165,46 @@ body a {
 
 .slide__title {
   text-align: center;
-  padding: 5vh 0 1vh 0;
+  padding: 2vh 0 2vh 0;
+}
+
+.slide__title--rules {
+  margin-bottom: 0;
 }
 
 .slide__desc {
   text-align: justify;
+}
+
+.slide__desc--rules {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.slide__desc--rules::-webkit-scrollbar {
+  width: 5px;
+}
+
+.slide__desc--rules::-webkit-scrollbar-thumb {
+  background: #F07167;
+  border-radius: 3px;
+}
+
+.slide__desc--rules::-webkit-scrollbar-track {
+  background-color: rgba(0, 129, 167, 0.2);
+  border-radius: 3px;
+}
+
+.slide__acceptrul {
+  margin: 4vh 0 2vh 0;
+  padding: 2vh 0;
+  background: #F07167;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slide__acceptrul:hover {
+  background: rgba(240, 113, 103, 0.9);
 }
 /*# sourceMappingURL=style.css.map */
