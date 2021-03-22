@@ -1,0 +1,11 @@
+padding: 1.5vh 0 0.4vh 0;
+    margin: 0 0vh 0.8vh 0;
+    font-size: 1.1em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #F8F8F8;
+    -webkit-box-shadow: -2vw 0px 1px 0px #f8f8f8, 2vw 0px 1px 0px #f8f8f8;
+    box-shadow: -2vw 0px 1px 0px #f8f8f8, 2vw 0px 1px 0px #f8f8f8;
+    color: #595959;

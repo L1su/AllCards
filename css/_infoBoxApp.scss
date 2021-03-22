@@ -1,0 +1,25 @@
+.infoboxApp {
+    align-self: flex-start;
+    width: 100%;
+    padding: 1vh 2vw;
+    box-sizing: border-box;
+
+    @mixin infobox($icon, $bcolor, $color) {
+        background: $bcolor;
+        color: $color;
+
+        &::before {
+            font-family: Fontello;
+            content: "#{$icon}";
+            padding-right: 1.5vw;
+        }
+    }
+
+    &--alert {
+        @include infobox("\e80d", $color5, $color6);
+    }
+
+    &--info {
+        @include infobox("\e819", $color1, $color6);
+    }
+}

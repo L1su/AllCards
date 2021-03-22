@@ -17,9 +17,7 @@ if(RulesAccep  == null){
 }
 
 
-RulesAccButton.addEventListener("click", function() {
+RulesAccButton.addEventListener("click", () => {
     localStorage.setItem("rules", true);
     FirstRunBox.classList.remove("FirstRun--open");
   });
-
-

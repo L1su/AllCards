@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/library/JsBarcode.all.min.js" defer></script>
     <script src="js/firstRun.js" defer></script>
-    <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="js/infoBoxApp.js" defer></script>
+    <script src="js/navApp.js" defer></script>
+    <script src="js/cardPanel.js" defer></script>
+    <script src="js/boxTarget.js" defer></script>
+    <script src="js/shoppingList.js" defer></script>
+    
     <title>AllCards</title>
 </head>
 <body>
+    <!--- --- --- FirstRun APP --- --- --->
     <div class="FirstRun">
         <div class="FirstRun__slider">
 
@@ -17,7 +27,7 @@
                 <h2 class="slide__title">Korzystaj z promocji</h2>
                 <div class="slide__desc">
                    Używaj wirtualnych kart lojalnościowych i korzystaj z promocji przygotowanych przez sklepy.
-                   <div>Oszczedzasz czas na zakladanie kolejncyh kart oraz chronisz swoje dane przed korporacjami</div>
+                   <div>Oszczędzasz czas na zakładanie kolejnych kart oraz chronisz swoje dane przed korporacjami</div>
                 </div>
             </div> 
 
@@ -26,7 +36,7 @@
                 <h2 class="slide__title">Dodaj swoje karty</h2>
                 <div class="slide__desc">
                     <div>Dodaj twoje istniejące karty lojalnościowe.</div>
-                    Pamiętaj, tylko ty masz dostep do swoich kart!
+                    Pamiętaj, tylko ty masz dostęp do swoich kart!
                 </div>
             </div>
 
@@ -35,7 +45,7 @@
                 <h2 class="slide__title">Pomagaj!</h2>
                 <div class="slide__desc">
                        <div>Skanując karty wirtualne pomagasz! </div>
-                       Punkty zgormadzone na kartach wybranych firm przekazujemy na cele dobroczynne!
+                       Punkty zgromadzone na kartach wybranych firm przekazujemy na cele dobroczynne!
                 </div>
             </div>
 
@@ -44,8 +54,8 @@
                 <h2 class="slide__title slide__title--rules">Regulamin</h2>
                 <div class="slide__desc slide__desc--rules">
                     [Start]
-                    <br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda<br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda<br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda
-                    <br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda<br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda<br>adasd<br>adasd<br>asdad<br>adasd<br>asdasda
+                    <br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test
+                    <br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test
                     <br>
                     [Koniec]
                 </div>
@@ -56,5 +66,158 @@
         <div class="FirstRun__nav">
         </div>
     </div>
+    
+    <!--- --- --- APP --- --- --->
+    <main class="LElements">
+        <aside class="LElements__infobox infoboxApp"></aside>
+        <div class="LElements__views">
+
+            <!---- Lista zakupów ---->
+            <section class="LElements__section shppList" data-target="slist">
+                <h3 class="shppList__title">Lista zakupów:</h3>
+                <div class="shppList__row">
+                    <input type="checkbox" class="shppList__checkbx" >
+                    <input type="text" class="shppList__text" placeholder="Nazwa produktu &#xe80c;">
+                    <div class="shppList__line"><!--Linia skreslenia--></div>
+                </div>
+                <div class="shppList__row">
+                    <input type="checkbox" class="shppList__checkbx">
+                    <input type="text" class="shppList__text">
+                    <div class="shppList__line"><!--Linia skreslenia--></div>
+                </div>
+            </section>
+
+            <!---- Lista kart ---->
+            <section class="LElements__section cardPanel LElements__section--active"  data-target="card">
+                     <!--ULUBIONE-->
+                <h3 class="cardPanel__category cardPanel__category--favo">Ulubione: </h3>
+                <div class="cardPanel__FavBox"></div> <!--Kontener na ulubione karty-->
+
+                    <!--WSZYSTKIE KARTY-->
+                <h3 class="cardPanel__category">Wszystkie karty:</h3>
+                    <!--BOX INFORMACYJNY-->
+                <div class="cardPanel__panel cardPanel__panel--infoBox">  
+                    <div class="cardPanel__TextBox">
+                        <h4 class="cardPanel__title"></h4>
+                        <span class="cardPanel__storeList"></span>
+                    </div>
+                </div>
+
+                <div class="cardPanel__AllCardBox"> <!--Kontener na wszystkie karty-->
+
+                    <div class="cardPanel__panel" data-cardname="PayBack" data-coding="EAN13" data-cardhelp="1" data-cardfavo="0">
+                        <div class="cardPanel__ImgBox">
+                            <div class="cardPanel__icon"></div>
+                            <img src="img/brands/PayBack.webp" alt="" class="cardPanel__logo" >
+                        </div>
+                        <div class="cardPanel__TextBox">
+                            <h4 class="cardPanel__title">Payback</h4>
+                            <span class="cardPanel__storeList">Bp, Kaufland, ETC.</span>
+                        </div>
+                        <div class="cardPanel__FavBox"> 
+                            <div class="cardPanel__favIcon"></div>
+                        </div>
+                    </div>
+
+                    <div class="cardPanel__panel" data-cardname="test" data-coding="EAN13" data-cardhelp="0" data-cardfavo="0">
+                        <div class="cardPanel__ImgBox">
+                            <div class="cardPanel__icon"></div>
+                            <img src="img/brands/PayBack.webp" alt="" class="cardPanel__logo" >
+                        </div>
+                        <div class="cardPanel__TextBox">
+                            <h4 class="cardPanel__title">test</h4>
+                            <span class="cardPanel__storeList">Bp, Kaufland, ETC.</span>
+                        </div>
+                        <div class="cardPanel__FavBox"> 
+                            <div class="cardPanel__favIcon"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="cardPanel__targetBox BoxTarget">
+                    <div class="BoxTarget__wrapper">
+                        <div class="BoxTarget__slideBox">
+                            <div class="BoxTarget__inTheFuture"></div>
+                            <div class="BoxTarget__slideSymbol"></div>
+                            <div class="BoxTarget__closeSymbol"></div>
+                        </div>
+                        <div class="BoxTarget__content">
+                            <h4 class="BoxTarget__title">
+                                Nazwa karty
+                            </h4>
+                            <div class="BoxTarget__slider">
+
+
+                                <div class="BoxTarget__slide BoxTarget__slide--random">
+                                    <div class="BoxTarget__barcode">
+                                        <svg class="BoxTarget__barcodeSVG"
+                                            jsbarcode-format="EAN13"
+                                            jsbarcode-value="9953688522399"
+                                            jsbarcode-width="3"
+                                            jsbarcode-background="#fff"
+                                            jsbarcode-displayValue="false">
+                                        </svg>
+                                    </div>
+                                    <input class="BoxTarget__numberCard" type="number" placeholder="Numer karty"  value="9953688522399" disabled>
+                                    <textarea class="BoxTarget__descriptionCard" maxlength="60" placeholder="Kliknij by dodać opis karty" disabled></textarea>
+                                    <div class="BoxTarget__listButtons">
+                                        <div role="button" class="BoxTarget__button BoxTarget__button--refresh" >Odśwież</div>
+                                        <div role="button" class="BoxTarget__button BoxTarget__button--report">Zgłoś problem</div>
+                                    </div>
+                                    <div class="BoxTarget__eventInfo">
+                                        
+                                    </div>
+                                </div>
+
+                                <!--<div class="BoxTarget__slide BoxTarget__slide--user">
+                                    <div class="BoxTarget__barcode">
+                                        <svg class="BoxTarget__barcodeSVG"
+                                            jsbarcode-format="EAN13"
+                                            jsbarcode-value="9953688522399"
+                                            jsbarcode-width="3"
+                                            jsbarcode-background="#fff"
+                                            jsbarcode-displayValue="false">
+                                        </svg>
+                                    </div>
+                                    <div class="BoxTarget__editNumber">
+                                        <input class="BoxTarget__numberCard BoxTarget__numberCard--addByUser" type="number" placeholder="Numer twojej karty"  value="">
+                                        <div class="BoxTarget__scanNumber"></div>
+                                    </div>
+                                    <textarea class="BoxTarget__descriptionCard" maxlength="60" placeholder="Opis pierwszej karty"></textarea>
+                                    <div class="BoxTarget__listButtons">
+                                        <!--<div role="button" class="BoxTarget__button BoxTarget__button--edit">Edytuj</div> 
+                                        <div role="button" class="BoxTarget__button BoxTarget__button--remove">Wyczyść</div>
+                                    </div>
+                                </div>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!---- USER ---->
+            <section class="LElements__section" data-target="user">
+                User
+            </section>
+        </div>
+
+        <!--- --- --- MENU --- --- --->
+        <nav class="LElements__nav navApp">   
+            <div class="navApp__element">
+                <a href="#" class="navApp__link navApp__link--slist" data-link="slist">Lista zak.</a>
+            </div>
+            <div class="navApp__element">
+                <a href="#" class="navApp__link navApp__link--card" data-link="card">Karty</a>
+            </div>
+            <div class="navApp__element">
+                <a href="#" class="navApp__link navApp__link--user" data-link="user">Użytownik</a>
+            </div>
+        </nav>  
+    </main>
 </body>
 </html>

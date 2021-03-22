@@ -1,0 +1,285 @@
+.BoxTarget {
+    display: none;
+
+    &--active {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px 5px 0px 0px;
+        overflow-y: hidden;
+        box-sizing: border-box;
+        z-index: 9999999999;
+    }
+
+    &--focus {
+        overflow-y: scroll;
+        overscroll-behavior-y: contain;
+    }
+
+
+
+    &__wrapper {
+        margin-top: 200%;
+        background: $color6;
+        color: $color7;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 1vw;
+        box-shadow: 0px -3px 20px black;
+    }
+
+    &__slideBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 100%;
+        height: 4vh;
+        box-sizing: border-box;
+    }
+
+    &__slideSymbol {
+        height: 4px;
+        width: 30vw;
+        border-radius: 8px;
+        background: $color4;
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    &__closeSymbol {
+        &::before {
+            font-family: Fontello;
+            font-size: 1.4em;
+            content: "\E806";
+            color: $color4;
+            padding: 0 1vw;
+        }
+    }
+
+    &__inTheFuture {
+        //Tymczasowe
+        @extend .BoxTarget__closeSymbol;
+        opacity: 0;
+    }
+
+
+
+    &__content {
+        padding: 1vh 0 0 0;
+    }
+
+    &__title {
+        padding: 1vh 2vw 2vh 2vw;
+        margin: 0;
+        font-size: 1.5em;
+        color: lighten($color7, 35%);
+    }
+
+    &__slider {
+        display: flex;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll;
+        border-radius: 5px;
+        margin: 0 1.5vw;
+        text-align: center;
+
+        &::-webkit-scrollbar {
+            height: 2px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $color3;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $color2;
+        }
+    }
+
+
+    //SLIDE ALL
+    &__slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        scroll-snap-align: center;
+        margin: 0 10px;
+        border-radius: 5px;
+        padding: 1vh 1vw;
+
+        &--random {
+            margin-left: 0;
+        }
+
+        &--add {
+            padding: 3vh 0;
+        }
+
+        &--user {}
+    }
+
+    &__barcode {
+        text-align: center;
+    }
+
+    &__barcodeSVG {
+        width: 100%;
+    }
+
+    &__numberCard {
+        background: none;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 1.5em;
+        letter-spacing: 1.5vw;
+        border-bottom: 2px solid transparent;
+        width: 100%;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &:focus {
+            border-bottom: 2px solid $color1;
+        }
+
+        &--addByUser {}
+    }
+
+    &__descriptionCard {
+        outline: none;
+        background: none;
+        width: 65vw;
+        resize: none;
+        border: 1px solid;
+        border: none;
+        margin-top: 3vh;
+
+        &--help {
+            color: $color1;
+            text-align: center;
+        }
+
+        &--NoHelp {
+            text-align: center;
+        }
+
+        &::placeholder {
+            text-align: center;
+            padding: 1vh 0;
+            transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+            border-color: transparent transparent $color1 transparent;
+        }
+
+        &:focus::placeholder {
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+    }
+
+    &__listButtons {
+        display: flex;
+        justify-content: space-around;
+        padding: 10vh 0 2vh 0;
+    }
+
+    &__button {
+        padding: 2vh;
+        min-width: 30vw;
+        color: $color6;
+        border: 1px solid $color4;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+
+
+
+
+        @mixin IconInButton($icon, $colorBC) {
+            background: $colorBC;
+
+            &::before {
+                font-family: Fontello;
+                content: "#{$icon}";
+                padding-right: 2vw;
+            }
+        }
+
+        &--refresh {
+            @include IconInButton("\E811", $color2);
+        }
+
+        &--report {
+            @include IconInButton("\F188", $color5);
+        }
+
+        &--edit {
+            @include IconInButton("\E80C", $color2);
+        }
+
+        &--remove {
+            @include IconInButton("\E806", $color5);
+            padding-right: 15vw;
+            padding-left: 15vw;
+        }
+    }
+
+
+
+    @keyframes cssAnimation {
+        to {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+    }
+
+
+    &__eventInfo {
+        color: $color5;
+        font-size: 0.8em;
+
+
+    }
+
+    //SLIDE ADD
+    &__editNumber {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: 1vw;
+    }
+
+    &__scanNumber {
+        //Usunąć tą linie gdy będzie działać :C
+        opacity: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color4;
+        //padding: 1vh 0vh 0vh 0vh;
+
+        &::before {
+            color: $color5;
+            font-family: Fontello;
+            content: "\E815";
+        }
+
+        &:hover::before {
+            opacity: 0.7;
+        }
+    }
+}

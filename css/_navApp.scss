@@ -1,0 +1,57 @@
+.navApp {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0px 6px 19px $color7;
+    z-index: 888;
+
+
+    &__element {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color6;
+    }
+
+
+    &__link {
+        flex: 1;
+        padding: 1vw 0;
+        font-size: 0.9em;
+        color: $color4;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+
+
+        //Icon in menu 
+        @mixin iconmenu($icon) {
+            &::before {
+                font-family: Fontello;
+                content: "#{$icon}";
+                display: block;
+                padding-top: 0.4vh;
+                font-size: 1.7em;
+            }
+        }
+
+        &--slist {
+            @include iconmenu("\F291");
+        }
+
+        &--card {
+            @include iconmenu("\e813");
+        }
+
+        &--user {
+            @include iconmenu("\e804");
+        }
+
+        &--active {
+            color: $color7;
+
+            &:before {
+                color: $color1;
+            }
+        }
+    }
+}

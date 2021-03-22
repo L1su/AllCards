@@ -1,9 +1,13 @@
-@import 'DayColorSchem';
+@import 'DayColorSchema';
 
 @font-face {
     font-family: "Arbutus Slab";
-    src: url(font/ArbutusSlab-Regular.ttf);
-    font-weight: 0;
+    src: url(../font/ArbutusSlab-Regular.ttf);
+}
+
+@font-face {
+    font-family: fontello;
+    src: url(../font/fontello.ttf);
 }
 
 
@@ -14,15 +18,28 @@ body {
     box-sizing: border-box;
     scroll-behavior: smooth;
     height: 100%;
-
     background: $color3;
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
+    overscroll-behavior-y: contain;
 }
 
 
+a {
+    text-decoration: none;
+    //color: $color6;
+}
+
+//Dark motyw: https://coolors.co/0b132b-1c2541-3a506b-5bc0be-6fffe9
+
 @import 'firstRun';
+@import 'layoutElements';
+
+//APP
+@import 'infoBoxApp';
+@import 'navApp';
+
+//Panels
+@import 'cardPanel';
+@import 'boxTarget';
+
+//Lista zakupów
+@import 'shoppingList';

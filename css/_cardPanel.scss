@@ -1,0 +1,191 @@
+.cardPanel {
+    padding: 0 2vw;
+
+    //  Tytuł
+    &__category {
+        padding: 1.5vh 0 0.4vh 0;
+        margin: 0 0vh 0.8vh 0;
+        //margin: 0;
+        font-size: 1.1em;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background: $color3;
+        box-shadow: -2vw 0px 1px 0px $color3, 2vw 0px 1px 0px $color3;
+        color: lighten($color7, 35%);
+
+        &::before {
+            font-family: Fontello;
+            content: "\F219";
+            padding-right: 1vw;
+            color: $color2;
+        }
+
+        //Ulubione
+        &--favo {
+            &::before {
+                font-family: Fontello;
+                content: "\E800";
+                padding-right: 1vw;
+                color: $color5;
+            }
+        }
+    }
+
+
+    //Cały Panel
+    &__panel {
+        margin: 0.5vh 0 1vh 0;
+        display: flex;
+        background: $color6;
+        box-shadow: 0px 0px 4px 0px $color4;
+        border-radius: 5px;
+        position: relative;
+
+        &--infoBox {
+            display: none;
+        }
+
+        &--infoBoxActive {
+            display: block;
+            padding: 1.5vh 1vw;
+            border: 1.5px solid $color5;
+            box-sizing: border-box;
+        }
+    }
+
+    //Pierwszy podział
+    &__ImgBox {
+        display: flex;
+        padding: 1vh 1vh;
+        border-radius: 5px;
+        //box-shadow: 1px 0.5px 4px 0px $color4;
+    }
+
+    &__icon {
+        &--help::before {
+            position: absolute;
+            top: -0.4vh;
+            left: -0.4vh;
+            padding: 4px;
+            border-radius: 50%;
+            font-family: Fontello;
+            content: "\E802";
+            font-size: 0.7em;
+            color: $color5;
+            background: $color3;
+            border: 1px solid $color5;
+        }
+    }
+
+    &__logo {
+        height: 8vh;
+        width: 8vh;
+    }
+
+    //Drugi podział
+    &__TextBox {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 1.5vw;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0.3vh 0;
+    }
+
+    &__storeList {
+        font-size: 0.7em;
+    }
+
+    //Trzeci podział
+    &__FavBox {
+        align-self: center;
+    }
+
+    &__favIcon {
+        display: flex;
+        margin-right: 1.5vh;
+
+        &::before {
+            font-family: Fontello;
+            font-size: 1.5em;
+            content: '\E801';
+            color: $color4;
+        }
+    }
+
+
+    // DATA ELEMENTS!!    
+    &__panel[data-cardFavo="1"] .cardPanel__favIcon {
+        &::before {
+            content: '\E800';
+            color: $color5;
+            animation: addStar 1s;
+        }
+    }
+
+    &__panel[data-cardFavo="0"] .cardPanel__favIcon {
+        &::before {
+            animation: removeStar 1s;
+        }
+    }
+
+    &__panel[data-cardHelp="1"] .cardPanel__icon {
+        &::before {
+            position: absolute;
+            top: -0.4vh;
+            left: -0.4vh;
+            padding: 4px;
+            border-radius: 50%;
+            font-family: Fontello;
+            content: "\E802";
+            font-size: 0.7em;
+            color: $color5;
+            background: $color3;
+            border: 1px solid $color5;
+        }
+    }
+}
+
+//  ANIMACJE
+@keyframes addStar {
+    0% {
+        color: $color4;
+    }
+
+    30% {
+        color: $color4;
+    }
+
+    50% {
+        color: $color5;
+    }
+
+    70% {
+        color: $color5;
+        text-shadow: 0px 0px 3px $color5;
+    }
+
+    100% {
+        color: $color5;
+        text-shadow: none;
+    }
+}
+
+@keyframes removeStar {
+    0% {
+        color: $color3;
+    }
+
+    70% {
+        color: $color4;
+    }
+
+    100% {
+        color: $color4;
+    }
+}
