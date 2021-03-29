@@ -2,11 +2,20 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllCards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon -->
+    <link rel="icon" href="img/other/favicon.ico"><!-- 32×32 -->
+    <link rel="icon" href="img/other/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/pwa/icon-180x180.png"><!-- 180×180 -->
+    <!-- PWA -->
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.json">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- JS -->
     <script src="js/library/JsBarcode.all.min.js" defer></script>
     <script src="js/firstRun.js" defer></script>
     <script src="js/infoBoxApp.js" defer></script>
@@ -14,8 +23,8 @@
     <script src="js/cardPanel.js" defer></script>
     <script src="js/boxTarget.js" defer></script>
     <script src="js/shoppingList.js" defer></script>
-    
-    <title>AllCards</title>
+    <script src="js/userPanel.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <!--- --- --- FirstRun APP --- --- --->
@@ -75,15 +84,9 @@
             <!---- Lista zakupów ---->
             <section class="LElements__section shppList" data-target="slist">
                 <h3 class="shppList__title">Lista zakupów:</h3>
-                <div class="shppList__row">
-                    <input type="checkbox" class="shppList__checkbx" >
-                    <input type="text" class="shppList__text" placeholder="Nazwa produktu &#xe80c;">
-                    <div class="shppList__line"><!--Linia skreslenia--></div>
-                </div>
-                <div class="shppList__row">
-                    <input type="checkbox" class="shppList__checkbx">
-                    <input type="text" class="shppList__text">
-                    <div class="shppList__line"><!--Linia skreslenia--></div>
+                <div class="shppList__boxAdd">
+                    <input type="text" class="shppList__inputAdd" placeholder="Dodaj produkt do listy" maxlength="35">
+                    <div class="shppList__inputButtonRmv"></div>
                 </div>
             </section>
 
@@ -201,8 +204,45 @@
             </section>
 
             <!---- USER ---->
-            <section class="LElements__section" data-target="user">
-                User
+            <section class="LElements__section userSet" data-target="user">
+                <h3 class="userSet__title">Profil użytkownika:</h3>
+                <div class="userSet__boxUser">
+                    <div class="userSet__boxAvatar">
+                        <img src="https://avatars.dicebear.com/api/bottts/USR.svg?w=70&h=70&mouthChance=0&textureChance=0" alt="Avatar" class="userSet__avatar"> 
+                    </div>
+                    <div class="userSet__boxName">
+                        <label class="userSet__labelName">
+                            Witaj:
+                            <input type="text"  class="userSet__inputName" placeholder="użytkowniku" minlength="2" maxlength="15" >
+                        </label>  
+                    </div> 
+                </div>
+                <div class="userSet__boxy">
+                    <h4 class="userSet__category userSet__category--appseting">Ustawienia aplikacji:</h4>
+                    <div class="userSet__addPwa">Używaj strony jak aplikacji</div>
+                    <div>Motyw strony</div>
+                    <div>Usuń dane lokalne</div>
+                </div>
+
+                <div class="userSet__boxy">
+                    <h4 class="userSet__category userSet__category--donate">Wspieraj nasz projekt</h4>
+                    <div>BuyMeCaffe</div>
+                    <div>PayPal</div>
+                    <div>Bitcoin</div>
+                </div>
+
+                <div class="userSet__boxy">
+                    <h4 class="userSet__category userSet__category--media">Nasze media:</h4>
+                    <div>Facebook</div>
+                    <div>Discord</div>
+                </div>
+
+                <div class="userSet__boxy userSet__boxy--other">
+                    <span> Zasady </span> 
+                    <span> Nowości </span>
+                    <span> Kontakt </span>
+                    <div>Strona wykorzystuje pliki lokalne</div>
+                </div>
             </section>
         </div>
 

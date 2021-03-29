@@ -28,6 +28,7 @@ a {
     //color: $color6;
 }
 
+
 //Dark motyw: https://coolors.co/0b132b-1c2541-3a506b-5bc0be-6fffe9
 
 @import 'firstRun';
@@ -42,4 +43,7 @@ a {
 @import 'boxTarget';
 
 //Lista zakupów
-@import 'shoppingList';
+@import 'shoppingListPanel';
+
+//Użytkownik
+@import 'userPanel';

@@ -1,0 +1,136 @@
+.userSet {
+    min-height: 100%;
+    position: relative;
+
+    &__title {
+        padding: 1.5vh 2vw 0.8vh 2vw;
+        margin: 0;
+        font-size: 1.1em;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        color: lighten($color7, 35%);
+        background: $color6;
+
+        &::before {
+            font-family: Fontello;
+            content: "\f2c0";
+            padding-right: 1vw;
+            color: $color2;
+        }
+    }
+
+    &__boxUser {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0vh 0 0.5vh 0;
+        box-shadow: 0 4px 8px -5px $color7;
+        background: $color6;
+    }
+
+    &__boxAvatar {
+        background: $color6;
+        padding: 5px;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        position: relative;
+        margin: 10px 0;
+        box-shadow: 0px 0px 5px $color1;
+    }
+
+
+    &__avatar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+
+
+    &__boxName {
+        text-align: center;
+    }
+
+    &__labelName {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.2em;
+        color: $color1;
+    }
+
+    &__inputName {
+        border: none;
+        background: none;
+        font-size: 1em;
+        border-bottom: 1px solid $color3;
+        margin-top: 1.5vh;
+        max-width: 41vw;
+        text-align: center;
+        color: $color5;
+
+
+        &::placeholder {
+            font-size: 1em;
+            text-align: center;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid $color2;
+        }
+    }
+
+
+    &__boxy {
+        padding: 0 2vw;
+
+        &--other {
+            font-size: 0.8em;
+            padding: 1vh 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+
+    &__category {
+        padding: 3vh 0 0.5vh 0;
+        margin: 0;
+        font-size: 1em;
+        color: $color7;
+
+        &--appseting {
+            &::before {
+                font-family: Fontello;
+                content: "\e80f";
+                padding-right: 1vw;
+                color: $color1;
+            }
+        }
+
+        &--donate {
+            &::before {
+                font-family: Fontello;
+                content: "\e802";
+                padding-right: 1vw;
+                color: $color5;
+            }
+        }
+
+        &--media {
+            &::before {
+                font-family: Fontello;
+                content: "\e816";
+                padding-right: 1vw;
+                color: $color1;
+            }
+        }
+    }
+
+
+}
