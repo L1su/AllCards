@@ -13,6 +13,7 @@
         background: $color3;
         box-shadow: -2vw 0px 1px 0px $color3, 2vw 0px 1px 0px $color3;
         color: lighten($color7, 35%);
+        user-select: none;
 
         &::before {
             font-family: Fontello;
@@ -30,6 +31,14 @@
                 color: $color5;
             }
         }
+    }
+
+
+    //Ładowanie
+    &__loading {
+        text-align: center;
+        padding: 1.5vh 0;
+        font-weight: bold;
     }
 
 

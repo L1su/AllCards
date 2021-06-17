@@ -1,0 +1,35 @@
+.allertBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 999999999999999999;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.5vw;
+    box-sizing: border-box;
+    display: none;
+    font-weight: bold;
+
+
+    &__noscript {
+        display: none;
+    }
+
+    &__pcBrows {
+        display: none;
+    }
+
+    &__enterPc {
+        color: rgb(255, 72, 0);
+        cursor: grab;
+
+        &:hover {
+            color: red;
+        }
+    }
+}

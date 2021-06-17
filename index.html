@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>AllCards</title>
+    <meta name="description" content="Korzystaj z kart lojalnościowych i pomagaj!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- OG:Media -->
+    <meta property="og:url"                content="https://allcards.app/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="AllCards" />
+    <meta property="og:description"        content="Uzyskaj dostęp do wszystkich kart lojalnościowych w jednym miejscu. Zbieraj punkty lojalnościowe i pomagaj!" />
+    <meta property="og:image"              content="https://allcards.app/img/other/ogMedia.png" />
     <!-- Favicon -->
     <link rel="icon" href="img/other/favicon.ico"><!-- 32×32 -->
     <link rel="icon" href="img/other/favicon.svg" type="image/svg+xml">
@@ -12,73 +19,52 @@
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="manifest.json">
+    <!-- ---    --   ---<link rel="manifest" href="manifest.json">---  --   ---  -->
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyDx2dtG0-E9OMwer5N4ThKjlAG_-ml-Bjw",
+        authDomain: "allcards-app.firebaseapp.com",
+        projectId: "allcards-app",
+        storageBucket: "allcards-app.appspot.com",
+        messagingSenderId: "603669292785",
+        appId: "1:603669292785:web:6b70e0ee036b70c4bb6b50",
+        measurementId: "G-114KR4CZ05"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    </script>
+    <script src="js/engine.js"></script> <!-- e -->
     <!-- JS -->
     <script src="js/library/JsBarcode.all.min.js" defer></script>
-    <script src="js/firstRun.js" defer></script>
-    <script src="js/infoBoxApp.js" defer></script>
-    <script src="js/navApp.js" defer></script>
-    <script src="js/cardPanel.js" defer></script>
-    <script src="js/boxTarget.js" defer></script>
-    <script src="js/shoppingList.js" defer></script>
-    <script src="js/userPanel.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/_firstRun.js" defer></script>
+    <script src="js/_navApp.js" defer></script>
+    <script src="js/_cardPanel.js" defer></script> 
+    <script src="js/_boxTarget.js" defer></script> <!-- e -->
+    <script src="js/_shoppingList.js" defer></script>
+    <script src="js/_userPanel.js" defer></script>
+    
 </head>
 <body>
-    <!--- --- --- FirstRun APP --- --- --->
-    <div class="FirstRun">
-        <div class="FirstRun__slider">
-
-            <div class="FirstRun__slide slide">
-                <div class="slide__img slide__img--1"></div>
-                <h2 class="slide__title">Korzystaj z promocji</h2>
-                <div class="slide__desc">
-                   Używaj wirtualnych kart lojalnościowych i korzystaj z promocji przygotowanych przez sklepy.
-                   <div>Oszczędzasz czas na zakładanie kolejnych kart oraz chronisz swoje dane przed korporacjami</div>
-                </div>
-            </div> 
-
-            <div class="FirstRun__slide slide">
-                <div class="slide__img slide__img--2"></div>
-                <h2 class="slide__title">Dodaj swoje karty</h2>
-                <div class="slide__desc">
-                    <div>Dodaj twoje istniejące karty lojalnościowe.</div>
-                    Pamiętaj, tylko ty masz dostęp do swoich kart!
-                </div>
-            </div>
-
-            <div class="FirstRun__slide slide">
-                <div class="slide__img slide__img--3"></div>
-                <h2 class="slide__title">Pomagaj!</h2>
-                <div class="slide__desc">
-                       <div>Skanując karty wirtualne pomagasz! </div>
-                       Punkty zgromadzone na kartach wybranych firm przekazujemy na cele dobroczynne!
-                </div>
-            </div>
-
-            <div class="FirstRun__slide slide">
-                <div class="slide__img slide__img--4"></div>
-                <h2 class="slide__title slide__title--rules">Regulamin</h2>
-                <div class="slide__desc slide__desc--rules">
-                    [Start]
-                    <br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test
-                    <br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test
-                    <br>
-                    [Koniec]
-                </div>
-                <a href="#" class="slide__acceptrul">Akceptuje zasady</a>
-            </div>
-        </div>
-
-        <div class="FirstRun__nav">
-        </div>
-    </div>
-    
     <!--- --- --- APP --- --- --->
     <main class="LElements">
         <aside class="LElements__infobox infoboxApp"></aside>
+        <aside class="LElements__infobox allertBox">
+            <div class="allertBox__noscript">
+                <p>UWAGA</p>
+                <div>Twoja przeglądarka nie obsługuje JavaScript, aplikacja może wyświetlać sie niepoprawnie!</div>
+            </div>
+            <noscript><style>.allertBox__noscript{display: block;} .allertBox{display: flex;}</style></noscript>
+            <div class="allertBox__pcBrows">
+                Aplikacja jest przystosowana do urządzeń mobilnych używając jej na większych ekranach nie będziesz miał tych samych doznań! ;)
+                <p class="allertBox__enterPc">WCHODZĘ NA WŁASNĄ ODPOWIEDZIALNOŚĆ</p>
+            </div>
+        </aside>
         <div class="LElements__views">
 
             <!---- Lista zakupów ---->
@@ -106,9 +92,12 @@
                     </div>
                 </div>
 
-                <div class="cardPanel__AllCardBox"> <!--Kontener na wszystkie karty-->
+                <div class="cardPanel__AllCardBox"> 
+                    <div class="cardPanel__loading">Trwa ładowanie kart</div>
+                    
+                    <!--Kontener na wszystkie karty-->
 
-                    <div class="cardPanel__panel" data-cardname="PayBack" data-coding="EAN13" data-cardhelp="1" data-cardfavo="0">
+                    <!---<div class="cardPanel__panel" data-cardname="PayBack" data-coding="EAN13" data-cardhelp="1" data-cardfavo="0">
                         <div class="cardPanel__ImgBox">
                             <div class="cardPanel__icon"></div>
                             <img src="img/brands/PayBack.webp" alt="" class="cardPanel__logo" >
@@ -120,21 +109,7 @@
                         <div class="cardPanel__FavBox"> 
                             <div class="cardPanel__favIcon"></div>
                         </div>
-                    </div>
-
-                    <div class="cardPanel__panel" data-cardname="test" data-coding="EAN13" data-cardhelp="0" data-cardfavo="0">
-                        <div class="cardPanel__ImgBox">
-                            <div class="cardPanel__icon"></div>
-                            <img src="img/brands/PayBack.webp" alt="" class="cardPanel__logo" >
-                        </div>
-                        <div class="cardPanel__TextBox">
-                            <h4 class="cardPanel__title">test</h4>
-                            <span class="cardPanel__storeList">Bp, Kaufland, ETC.</span>
-                        </div>
-                        <div class="cardPanel__FavBox"> 
-                            <div class="cardPanel__favIcon"></div>
-                        </div>
-                    </div>
+                    </div>-->
 
                 </div>
 
@@ -156,7 +131,7 @@
 
 
                                 <div class="BoxTarget__slide BoxTarget__slide--random">
-                                    <div class="BoxTarget__barcode">
+                                    <div class="BoxTarget__barcode BoxTarget__barcode">
                                         <svg class="BoxTarget__barcodeSVG"
                                             jsbarcode-format="EAN13"
                                             jsbarcode-value="9953688522399"
@@ -205,44 +180,64 @@
 
             <!---- USER ---->
             <section class="LElements__section userSet" data-target="user">
-                <h3 class="userSet__title">Profil użytkownika:</h3>
-                <div class="userSet__boxUser">
-                    <div class="userSet__boxAvatar">
-                        <img src="https://avatars.dicebear.com/api/bottts/USR.svg?w=70&h=70&mouthChance=0&textureChance=0" alt="Avatar" class="userSet__avatar"> 
+
+                <header class="userSet__userHeader">
+                    <div class="userSet__userHi">
+                        <h3 class="userSet__title">Witaj</h3>
+                        <input type="text" placeholder="użytowniku" class="userSet__userName" minlength="2" maxlength="15">
                     </div>
-                    <div class="userSet__boxName">
-                        <label class="userSet__labelName">
-                            Witaj:
-                            <input type="text"  class="userSet__inputName" placeholder="użytkowniku" minlength="2" maxlength="15" >
-                        </label>  
-                    </div> 
-                </div>
+                    <div class="userSet__infoBell">
+                        <div class="userSet__infoBellIcon"></div>
+                        <div class="userSet__infoInBell">
+                            <div class="userSet__infoInBellTitle">
+                                Aktualizacje:
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
                 <div class="userSet__boxy">
                     <h4 class="userSet__category userSet__category--appseting">Ustawienia aplikacji:</h4>
-                    <div class="userSet__addPwa">Używaj strony jak aplikacji</div>
-                    <div>Motyw strony</div>
-                    <div>Usuń dane lokalne</div>
+                    <div class="userSet__link userSet__link--addPwa">Używaj strony jak aplikacji</div>
+                    <div class="userSet__link userSet__link--share">Udostepnij projekt znajomym</div>
+                    <!--<div class="userSet__link userSet__link--themaWeb">Motyw strony</div>-->
+                    <div class="userSet__link userSet__link--clearLocalStrg">Usuń dane lokalne</div>
                 </div>
 
                 <div class="userSet__boxy">
                     <h4 class="userSet__category userSet__category--donate">Wspieraj nasz projekt</h4>
-                    <div>BuyMeCaffe</div>
-                    <div>PayPal</div>
-                    <div>Bitcoin</div>
+                    <details class="userSet__link userSet__link--btc">
+                        <summary>Bitcoin</summary>
+                        <div>1BrWzL4FycnRdnDdERLn1hBJdKJT1WrEGG</div>
+                    </details>
+                    <details class="userSet__link userSet__link--bat">
+                        <summary>BAT</summary>
+                        <div>0xEf7340A8f614eeA2f4D9c11f21ae265b148f2F0D</div>
+                    </details>
+                    <a href="https://buycoffee.to/l1su" target="_top"  class="userSet__link">Postaw mi kawę</a>
                 </div>
 
                 <div class="userSet__boxy">
                     <h4 class="userSet__category userSet__category--media">Nasze media:</h4>
-                    <div>Facebook</div>
-                    <div>Discord</div>
+                    <a href="https://www.facebook.com/app.AllCards/" target="_top" class="userSet__link">Facebook</a>
                 </div>
 
-                <div class="userSet__boxy userSet__boxy--other">
-                    <span> Zasady </span> 
-                    <span> Nowości </span>
-                    <span> Kontakt </span>
-                    <div>Strona wykorzystuje pliki lokalne</div>
+                <div class="userSet__boxy">
+                    <h4 class="userSet__category userSet__category--mani">Manifest:</h4>
+                    <div class="userSet__manif">
+                        <div>Wszelkie punkty uzbierane na kartach lojalnościowych są przeznaczone na organizacje dobroczynne!</div>
+                        <div> Naszym środkiem utrzymania są darowizny</div>
+                     </div>
                 </div>
+                
+
+                <div class="userSet__boxy userSet__boxy--other">            <!-- Wprowadzić zmiany -->
+                    <a href="#" class="userSet__otherLink">Zasady</a>
+                    <a href="mailto: lisu36@onet.pl" class="userSet__otherLink">Kontakt</a>  
+                    <div class="userSet__info">Aplikacja wykorzystuje pliki lokalne</div>
+                </div>
+
+
             </section>
         </div>
 

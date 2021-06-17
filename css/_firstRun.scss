@@ -97,19 +97,24 @@
         }
 
 
-        &--1 {
+        //THX https://undraw.co/illustrations
+        &--promocje {
             @include slideImg("../img/firstRun/promocje.webp");
         }
 
-        &--2 {
-            @include slideImg("../img/firstRun/wlasna.webp");
+        &--uKarta {
+            @include slideImg("../img/firstRun/uKarta.webp");
         }
 
-        &--3 {
+        &--sLista {
+            @include slideImg("../img/firstRun/sLista.webp");
+        }
+
+        &--pomagaj {
             @include slideImg("../img/firstRun/pomagaj.webp");
         }
 
-        &--4 {
+        &--regulamin {
             @include slideImg("../img/firstRun/regulamin.webp");
         }
     }

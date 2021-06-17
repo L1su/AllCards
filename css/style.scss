@@ -1,5 +1,6 @@
 @import 'DayColorSchema';
 
+
 @font-face {
     font-family: "Arbutus Slab";
     src: url(../font/ArbutusSlab-Regular.ttf);
@@ -20,19 +21,34 @@ body {
     height: 100%;
     background: $color3;
     overscroll-behavior-y: contain;
+    color: $TextColorBody;
 }
 
 
 a {
     text-decoration: none;
-    //color: $color6;
+    color: $color7;
+}
+
+//Details
+details>summary {
+    list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:focus {
+    outline: none;
 }
 
 
-//Dark motyw: https://coolors.co/0b132b-1c2541-3a506b-5bc0be-6fffe9
-
 @import 'firstRun';
 @import 'layoutElements';
+
+//Alert 
+@import 'allertBox';
 
 //APP
 @import 'infoBoxApp';

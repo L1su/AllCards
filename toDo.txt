@@ -1,0 +1,14 @@
+-Light/Dark thema
+-pwa
+
+----------
+firebase:
+-zgłaszanie kart zrobić
+
+---------------------------
+Poprawki:
+
+
+---------------------------
+Przyszłość:
+-Kod qr/barcode jest tworzony w js a nie w html
